@@ -187,6 +187,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
+  align-items: start;
 }
 
 .card-grid--compact {
@@ -396,6 +397,27 @@ ul {
 .table th {
   background: #f8fafc;
   color: var(--color-text);
+}
+
+/* Acordeón artículos (moved from inline) */
+.card-toggle { display: none; }
+.card-more {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 320ms ease, opacity 240ms ease, margin-top 200ms ease;
+  margin-top: 0;
+}
+/* Cuando el radio dentro del mismo .card__body esté checked, mostrar el panel */
+.card__body .card-toggle:checked ~ .card-more {
+  max-height: 1000px;
+  opacity: 1;
+  margin-top: 0.75rem;
+}
+.card-more .close-label { display: inline-block; margin-right: 1rem; cursor: pointer; color: inherit; text-decoration: underline; }
+
+@media (min-width: 801px) {
+  .card-more { background: transparent; }
 }
 
 .forum-card,
