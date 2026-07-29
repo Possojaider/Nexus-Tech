@@ -12,6 +12,13 @@
   }
 }
 
+/* Ocultar controles del menú por defecto en pantallas grandes */
+.nav-toggle,
+.hamburger,
+.site-nav .nav-close {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .site-header {
     flex-direction: column;
@@ -42,5 +49,115 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+
+  /* Menú hamburguesa solo con HTML/CSS */
+  .nav-toggle {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .hamburger__box {
+    width: 24px;
+    height: 18px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger__inner,
+  .hamburger__inner::before,
+  .hamburger__inner::after {
+    width: 24px;
+    height: 2px;
+    background-color: #111;
+    position: absolute;
+    left: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .hamburger__inner {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .hamburger__inner::before { content: ''; top: -7px; }
+  .hamburger__inner::after { content: ''; top: 7px; }
+
+  /* Navegación oculta por defecto en móvil: desliza desde la derecha */
+  .site-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 4rem 1.25rem;
+    gap: 1rem;
+    box-shadow: -8px 0 24px rgba(0,0,0,0.08);
+    transition: transform 0.28s ease;
+    z-index: 40;
+    transform: translateX(100%);
+    pointer-events: none;
+  }
+
+  /* Cuando el checkbox está marcado, mostrar el menú */
+  .nav-toggle:checked + .hamburger + .site-nav {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  /* Transformar icono a cruz cuando abierto */
+  .nav-toggle:checked + .hamburger .hamburger__inner {
+    transform: rotate(45deg);
+  }
+
+  .nav-toggle:checked + .hamburger .hamburger__inner::before {
+    transform: rotate(90deg);
+    top: 0;
+  }
+
+  .nav-toggle:checked + .hamburger .hamburger__inner::after {
+    opacity: 0;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 1.05rem;
+  }
+
+  /* Botón de cerrar dentro del panel */
+  .site-nav .nav-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: transparent;
+    border-radius: 8px;
+    padding: 0.45rem 0.6rem;
+    color: var(--color-text);
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 50;
+  }
+
+  .site-nav .nav-close:hover {
+    background: rgba(15,23,42,0.04);
   }
 }
