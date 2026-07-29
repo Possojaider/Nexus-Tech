@@ -1,40 +1,75 @@
 # NexusTech
 
-## Descripción
+> Landing page informativa de tecnología desarrollada con HTML y CSS puros.
 
-NexusTech es una landing page informativa sobre tecnología diseñada para presentar contenido relevante en torno a inteligencia artificial, gadgets, ciberseguridad, desarrollo web y eventos del sector. El proyecto está construido con HTML y CSS y ofrece una navegación clara entre múltiples secciones.
+## 🧩 Visión general
 
-## Tecnologías
+NexusTech es una página de presentación pensada para contenido tecnológico: artículos, guías, reseñas y secciones de comunidad. El proyecto prioriza claridad, modernidad y una experiencia responsive impecable, sin depender de JavaScript.
 
-- HTML5
-- CSS3
-- Flexbox y CSS Grid
-- Media queries para diseño responsive
-- Git para control de versiones
+## ✨ Qué hace
 
-## Estructura del proyecto
+- Muestra una hero section con llamadas a la acción claras.
+- Presenta cards de artículos con contenido adicional y enlaces a páginas secundarias.
+- Ofrece navegación consistente entre la home y las páginas internas.
+- Funciona en móviles, tablets y escritorio con un diseño fluido.
 
-- index.html: página principal del sitio
-- pages/: páginas adicionales como categorías, reseñas, comunidad, eventos y contacto
-- assets/css/: archivos de estilos organizados por componentes, layout y responsive
-- assets/img/: recursos visuales e ilustraciones del proyecto
+## 🛠 Tecnologías
 
-## Cómo ejecutar el proyecto
+- HTML5 semántico
+- CSS3 moderno
+- CSS Grid para el diseño del layout
+- Flexbox para alineaciones internas
+- Media queries para la adaptabilidad responsive
 
-1. Clona este repositorio en tu equipo.
-2. Abre la carpeta del proyecto en tu editor de código.
-3. Ejecuta el archivo index.html en tu navegador o usa una extensión de servidor local como Live Server.
-4. Navega entre las páginas para explorar la experiencia completa.
+## 📁 Estructura del proyecto
 
-## Características destacadas
+```text
+index.html
+pages/
+  ├─ categorias.html
+  ├─ comunidad.html
+  ├─ contacto.html
+  ├─ eventos.html
+  └─ resenas.html
+assets/
+  ├─ css/
+  │   ├─ components.css
+  │   ├─ layout.css
+  │   └─ responsive.css
+  └─ img/
+```
 
-- Diseño responsive adaptable a distintos tamaños de pantalla
-- Estructura modular y fácil de mantener
-- Menú de navegación consistente en todas las páginas
-- Estilo visual moderno orientado a contenido tecnológico
+- `index.html` contiene la página principal y la lógica visual del proyecto.
+- `pages/` aloja las secciones secundarias del sitio.
+- `assets/css/` separa el estilo por layout, componentes y responsive.
+- `assets/img/` guarda las imágenes e ilustraciones del proyecto.
 
-## Próximos pasos
+## 🚀 Cómo ejecutar
 
-- Añadir interactividad con JavaScript
-- Incorporar animaciones más dinámicas
-- Expandir el contenido con más artículos y secciones
+1. Abre la carpeta del proyecto en tu editor.
+2. Inicia un servidor local o abre `index.html` directamente.
+
+### Servidor local recomendado
+
+```bash
+python3 -m http.server 8000
+```
+
+Abre luego `http://localhost:8000`.
+
+## ✅ Características clave
+
+- Diseño responsive sin JavaScript.
+- Cards independientes en un grid con comportamiento visual consistente.
+- Navegación accesible y todo el contenido organizado de forma clara.
+- Estilo limpio y profesional listo para una presentación de proyecto.
+
+## 🔧 Buenas prácticas
+
+- Mantener la separación entre layout, componentes y responsive en CSS.
+- Conservar clases CSS coherentes para facilitar futuras revisiones.
+- Evitar JavaScript cuando el comportamiento puede lograrse con HTML/CSS.
+
+## 📌 Nota
+
+Este proyecto está diseñado como una demostración estable de una página web moderna basada en HTML y CSS, ideal para portfolios, presentaciones de producto o landing pages de contenido tecnológico.
