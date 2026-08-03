@@ -31,6 +31,8 @@ pages/
   ├─ contacto.html
   ├─ eventos.html
   └─ resenas.html
+  └─ landing.html
+
 assets/
   ├─ css/
   │   ├─ components.css
